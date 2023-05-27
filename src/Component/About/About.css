@@ -1,0 +1,166 @@
+.about {
+  height: 90%;
+  display: flex;
+  align-items: center;
+}
+
+.about-content {
+  height: 100%;
+  display: flex;
+  padding: 6em;
+  justify-content: center;
+  align-items: center;
+  gap: 8em;
+}
+
+.my-about {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 2 1 0;
+}
+
+.my-about p {
+  font-size: 1.35rem;
+  line-height: 1.8em;
+  margin-top: 1em;
+  color: #4e868a;
+}
+
+.about h1 {
+  font-size: 2.5em;
+  margin: 0;
+  color: #133c55;
+}
+
+.cv {
+  width: 30%;
+  height: 2.5em;
+  cursor: pointer;
+  background-color: #133c55;
+  border: 3px solid #133c55;
+  color: white;
+  border-radius: 15px;
+  transition: 0.5s;
+  font-size: 1em;
+}
+
+.cv:hover {
+  background-color: white;
+  color: #133c55;
+  border: 3px solid #133c55;
+}
+
+/* Pic List */
+.about-img {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  flex: 1 1 0;
+}
+
+.left-pic-list {
+  display: flex;
+  flex: 1 1 0;
+}
+
+.right-pic-list {
+  display: flex;
+  flex-direction: row-reverse;
+  flex: 1 1 0;
+}
+
+.p-pic {
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #518d9146;
+  position: relative;
+}
+
+.p-pic-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #4e868a;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 1s;
+  white-space: nowrap;
+  animation: pic-show 500ms;
+}
+
+.change {
+  width: 0%;
+}
+
+.pic {
+  flex: 1 1 0;
+  background-position: center;
+  background-size: cover;
+}
+
+/* Responsive */
+@media only screen and (max-width: 1320px) {
+  .about-content {
+    padding: 3em;
+  }
+
+  .my-about p {
+    font-size: 1.1rem;
+  }
+}
+
+@media only screen and (max-width: 1110px) {
+  .about h1 {
+    font-size: 2em;
+  }
+
+  .my-about p {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  .about-img {
+    display: none;
+  }
+
+  .cv {
+    font-size: 0.8em;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .about-content {
+    padding: 1em;
+  }
+}
+
+@media only screen and (max-height: 700px) {
+  .about-content {
+    padding: 2em;
+  }
+}
+
+@media only screen and (max-height: 500px) {
+  .about-content {
+    padding: 1em;
+  }
+}
+
+/* animation */
+@keyframes pic-show {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}

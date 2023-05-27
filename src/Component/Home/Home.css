@@ -1,0 +1,161 @@
+.home {
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.home h1 {
+  font-size: 2.5em;
+  margin: 1rem;
+}
+
+.name {
+  border-bottom: #133c55 3px solid;
+  padding-bottom: 0.5rem;
+}
+
+.home h3 {
+  font-size: 1.3em;
+  margin: 0 1rem;
+}
+
+.contact-me {
+  cursor: pointer;
+  background-color: #133c55;
+  border: 3px solid #133c55;
+  color: white;
+  border-radius: 15px;
+  margin: 1.2rem 1rem;
+  width: 40%;
+  height: 50px;
+  transition: 0.5s;
+  font-size: 1em;
+}
+
+.contact-me:hover {
+  background-color: white;
+  color: #133c55;
+  border: 3px solid #133c55;
+}
+
+.photo-cont {
+  width: 450px;
+  height: 450px;
+  border: 1em solid #133c55;
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.photo-cont:hover {
+  background-color: #62a8ac65;
+  margin-bottom: 1em;
+}
+
+.home img {
+  width: 500px;
+}
+
+.juan-head {
+  position: absolute;
+  overflow: visible;
+}
+
+/* Responsive */
+
+@media only screen and (max-width: 840px) {
+  .text {
+    font-size: 0.8em;
+  }
+
+  .photo-cont {
+    width: 350px;
+    height: 350px;
+  }
+
+  .home img {
+    width: 400px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .text {
+    font-size: 0.7em;
+  }
+
+  .photo-cont {
+    width: 250px;
+    height: 250px;
+    border: 0.7em solid #133c55;
+  }
+
+  .home img {
+    width: 300px;
+  }
+}
+
+@media only screen and (max-width: 570px) {
+  .home {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+
+  .text {
+    font-size: 0.7em;
+    text-align: center;
+  }
+
+  .home img {
+    width: 300px;
+  }
+
+  .home h1 {
+    margin: 0.3rem;
+  }
+
+  .name {
+    margin-top: -10px;
+  }
+}
+
+@media only screen and (max-height: 630px) {
+  .photo-cont {
+    width: 350px;
+    height: 350px;
+  }
+
+  .home img {
+    width: 400px;
+  }
+}
+
+@media only screen and (max-height: 450px) {
+  .photo-cont {
+    width: 250px;
+    height: 250px;
+    border: 0.7em solid #133c55;
+  }
+
+  .home img {
+    width: 300px;
+  }
+
+  .home h1 {
+    font-size: 2em;
+    margin: 1rem;
+  }
+
+  .name {
+    padding-bottom: 0.5rem;
+  }
+
+  .home h3 {
+    font-size: 1em;
+    margin: 0 1rem;
+  }
+}

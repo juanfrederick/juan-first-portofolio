@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "PT Sans Narrow", sans-serif;
+  font-size: 1.1rem;
+}
+
+.container {
+  height: 100vh;
+  background-color: white;
+  overflow: hidden;
+}
+
+/* Scroll Animation */
+.scroll-to-right {
+  animation: scrollRight 0.5s;
+}
+
+.scroll-to-left {
+  animation: scrollLeft 0.5s;
+}
+
+.reverse-to-right {
+  animation: reverseRight 0.5s;
+}
+
+.reverse-to-left {
+  animation: reverseLeft 0.5s;
+}
+
+@keyframes scrollRight {
+  from {
+    transform: translateX(-9999px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes scrollLeft {
+  from {
+    transform: translateX(9999px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes reverseRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-9999px);
+  }
+}
+
+@keyframes reverseLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(9999px);
+  }
+}

@@ -1,0 +1,163 @@
+.portofolio-container {
+  height: 90%;
+  /* background-color: aqua; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portofolio {
+  /* background-color: aquamarine; */
+  width: 80%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3em;
+}
+
+h1.portofolio-title {
+  font-size: 2.1em;
+  color: #133c55;
+}
+
+.card-container {
+  /* background-color: aliceblue; */
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+}
+
+.card {
+  /* background-color: antiquewhite; */
+  border: 2px solid #133c55;
+  border-radius: 20px;
+  padding: 3px;
+  /* height: 100%; */
+}
+
+.visible-card {
+  /* background-color: bisque; */
+  /* padding: 3px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-image {
+  border-radius: 20px;
+  /* border-top-left-radius: 20px;
+  border-top-right-radius: 20px; */
+  width: 150px;
+  height: 100px;
+  /* height: 100%; */
+  border: 2px solid #133c55;
+  transition: 1s;
+}
+
+.card-image:hover {
+  background-color: aliceblue;
+}
+
+.dropdown {
+  cursor: pointer;
+}
+
+.close {
+  cursor: pointer;
+}
+
+.invi-card {
+  /* background-color: aqua; */
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 5px;
+  height: auto;
+}
+
+.invi-card p {
+  font-size: 0.8em;
+  margin-top: 2px;
+}
+
+.invi-card p a {
+  font-size: 1em;
+  text-decoration: none;
+}
+
+/* Responsive */
+@media screen and (max-width: 1200px) {
+  .card-image {
+    width: 130px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .card-image {
+    width: 150px;
+  }
+
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    align-items: flex-start;
+  }
+
+  .portofolio {
+    gap: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .invi-card p {
+    font-size: 0.7em;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .portofolio {
+    height: 70%;
+  }
+  .dropdown {
+    display: none;
+  }
+
+  .close {
+    display: none;
+  }
+
+  .invi-card {
+    display: none;
+  }
+
+  .card-title {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .card-image {
+    width: 150px;
+    height: 80px;
+  }
+  .portofolio {
+    height: 100%;
+  }
+
+  .card-container {
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .card-image {
+    width: 23%;
+  }
+}
