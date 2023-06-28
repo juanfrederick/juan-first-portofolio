@@ -17,7 +17,12 @@ function MySkill(prop) {
 
 function Skills(prop) {
   return (
-    <main className="skills" ref={prop.parent}>
+    <main
+      className={`skills ${
+        prop.skillsIndicator !== 1 ? "scroll-to-right" : "scroll-to-left"
+      }`}
+      ref={prop.parent}
+    >
       <div className="skills-container">
         <h1 className="skills-title">My Skills</h1>
         <section className="skills-list">

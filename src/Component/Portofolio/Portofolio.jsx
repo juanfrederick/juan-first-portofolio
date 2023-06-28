@@ -99,7 +99,12 @@ function Portofolio(prop) {
   }, []);
 
   return (
-    <section className="portofolio-container" ref={prop.parent}>
+    <section
+      className={`portofolio-container ${
+        prop.portofolioIndicator !== 1 ? "scroll-to-right" : "scroll-to-left"
+      }`}
+      ref={prop.parent}
+    >
       <main className="portofolio">
         <h1 className="portofolio-title">Portofolio</h1>
         <section className="card-container">

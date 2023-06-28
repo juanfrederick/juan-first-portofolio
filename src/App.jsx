@@ -13,6 +13,11 @@ function App() {
   const [skills, setSkills] = useState(false);
   const [portofolio, setPortofolio] = useState(false);
   const [contact, setContact] = useState(false);
+
+  const [aboutIndicator, setAboutIndicator] = useState(1);
+  const [skillsIndicator, setSkillsIndicator] = useState(1);
+  const [portofolioIndicator, setPortofolioIndicator] = useState(1);
+
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
   const skillsRef = useRef(null);
@@ -122,11 +127,21 @@ function App() {
         skills={changeSkills}
         portofolio={changePortofolio}
         contact={changeContact}
+        setAboutIndicator={setAboutIndicator}
+        setSkillsIndicator={setSkillsIndicator}
+        setPortofolioIndicator={setPortofolioIndicator}
       />
       {home && <Home parent={homeRef} />}
-      {about && <About parent={aboutRef} />}
-      {skills && <Skills parent={skillsRef} />}
-      {portofolio && <Portofolio parent={portRef} />}
+      {about && <About parent={aboutRef} aboutIndicator={aboutIndicator} />}
+      {skills && (
+        <Skills parent={skillsRef} skillsIndicator={skillsIndicator} />
+      )}
+      {portofolio && (
+        <Portofolio
+          parent={portRef}
+          portofolioIndicator={portofolioIndicator}
+        />
+      )}
       {contact && <Contact parent={contactRef} />}
     </div>
   );

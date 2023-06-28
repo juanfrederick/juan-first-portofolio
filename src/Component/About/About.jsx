@@ -40,7 +40,12 @@ function PicList(prop) {
 
 function About(prop) {
   return (
-    <main className="about" ref={prop.parent}>
+    <main
+      className={`about ${
+        prop.aboutIndicator !== 1 ? "scroll-to-right" : "scroll-to-left"
+      }`}
+      ref={prop.parent}
+    >
       <section className="about-content">
         <div className="about-img">
           <PicList
