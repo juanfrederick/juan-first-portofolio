@@ -1,8 +1,9 @@
 import "./Portofolio.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MdClose, MdArrowDropDown } from "react-icons/md";
+import { data } from "../../data";
 
-function Card() {
+function Card({ title, image, text, link }) {
   const [card, setCard] = useState(false);
   const [close, setClose] = useState(false);
   const [drop, setDrop] = useState(true);
@@ -10,12 +11,8 @@ function Card() {
   return (
     <section className="card">
       <div className="visible-card">
-        <img
-          src="https://plus.unsplash.com/premium_photo-1683408267588-ebc95a4cf9a8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
-          alt=""
-          className="card-image"
-        />
-        <p className="card-title">Hello</p>
+        <img src={image} alt={title} className="card-image" />
+        <p className="card-title">{title}</p>
         {drop && (
           <MdArrowDropDown
             size={30}
@@ -41,17 +38,11 @@ function Card() {
       </div>
       {card && (
         <div className="invi-card">
-          <p>
-            Ini website pertama yang saya buat, tidak terlalu bagus hanya ingin
-            menunjukan betapa bangga ketika saya dapat membuat website
-          </p>
+          <p>{text}</p>
           <p>
             Github link :{" "}
-            <a
-              href="https://github.com/juanfrederick/UTS_Html_Css"
-              target="blank"
-            >
-              https://github.com/juanfrederick/UTS_Html_Css
+            <a href={link} target="blank">
+              {link}
             </a>
           </p>
         </div>
@@ -60,17 +51,73 @@ function Card() {
   );
 }
 
+function ButtonContainer({
+  page,
+  totalPage,
+  setPage,
+  setSmallIndicator,
+  setBigIndicator,
+  smallIndicator,
+  bigIndicator,
+}) {
+  return (
+    <div className="button-container">
+      {page === 1 ? undefined : (
+        <button
+          onClick={() => {
+            setPage((page -= 1));
+            setSmallIndicator((smallIndicator -= 3));
+            setBigIndicator((bigIndicator -= 3));
+          }}
+        >
+          prev
+        </button>
+      )}
+      {page === totalPage ? undefined : (
+        <button
+          onClick={() => {
+            setPage((page += 1));
+            setSmallIndicator((smallIndicator += 3));
+            setBigIndicator((bigIndicator += 3));
+          }}
+        >
+          next
+        </button>
+      )}
+    </div>
+  );
+}
+
 function Portofolio(prop) {
+  const [page, setPage] = useState(1);
+  const [totalPage, setTotalPage] = useState(0);
+  const [smallIndicator, setSmallIndicator] = useState(0);
+  const [bigIndicator, setBigIndicator] = useState(2);
+
+  useEffect(() => {
+    setTotalPage(Math.ceil(data.length / 3));
+  }, []);
+
   return (
     <section className="portofolio-container" ref={prop.parent}>
       <main className="portofolio">
         <h1 className="portofolio-title">Portofolio</h1>
         <section className="card-container">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          {data.map((val, index) => {
+            if (index >= smallIndicator && index <= bigIndicator) {
+              return <Card {...val} key={val.title} />;
+            }
+          })}
         </section>
+        <ButtonContainer
+          page={page}
+          totalPage={totalPage}
+          setPage={setPage}
+          smallIndicator={smallIndicator}
+          setSmallIndicator={setSmallIndicator}
+          bigIndicator={bigIndicator}
+          setBigIndicator={setBigIndicator}
+        />
       </main>
     </section>
   );

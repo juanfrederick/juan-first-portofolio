@@ -66,6 +66,7 @@
 }
 
 .side {
+  display: none;
   position: fixed;
   height: 100vh;
   width: 50%;
@@ -73,7 +74,6 @@
   right: 0;
   background-color: #62a8acef;
   z-index: 99;
-  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -96,7 +96,7 @@
   color: white;
 }
 
-.side-none {
+div.side-none {
   display: none;
 }
 
@@ -107,6 +107,11 @@
     padding-right: 15px;
     z-index: 999;
   }
+
+  .side {
+    display: flex;
+  }
+
   .nav-bar .nav-ul {
     display: none;
   }
