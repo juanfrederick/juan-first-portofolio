@@ -118,10 +118,10 @@ function Nav(prop) {
           </li>
           <li
             onClick={() => {
-              portofolio();
+              skills();
               setTimeout(() => {
                 setAboutIndicator(2);
-                setSkillsIndicator(2);
+                setPortofolioIndicator(1);
               }, 450);
             }}
           >
